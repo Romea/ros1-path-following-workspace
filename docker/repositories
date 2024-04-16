@@ -1,0 +1,30 @@
+repositories:
+  src/core/romea_common_core:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_core/romea_common.git
+    version: master
+  src/core/romea_odo_core:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_core/romea_odo.git
+    version: master
+  src/interfaces/core/romea_common_ros:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_ros1/interfaces/core/romea_common.git
+    version: master
+  src/interfaces/sensors/romea_odo_ros:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_ros1/interfaces/sensors/romea_odo.git
+    version: master
+  src/tools/romea_gazebo_ros:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_ros1/tools/romea_gazebo.git
+    version: master
+  src/tools/romea_gazebo_ros:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_ros1/interfaces/vehicles/adap2e.git
+    version: master
+  # src/tools/four_wheel_steering_tools:
+  #   type:git
+  #   url: git@gitlab-ssh.irstea.fr:romea/ros-vehicles/four_wheel_steering_tools.git
+
+# vim: ft=yaml

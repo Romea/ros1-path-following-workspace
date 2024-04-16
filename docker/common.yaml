@@ -1,0 +1,49 @@
+services:
+  base:
+    build: # use tiara_workspace image but add the host user in it
+      dockerfile_inline: |
+        FROM gitlab-registry.irstea.fr/cyrille.pierre/path_following_workspace:devel
+        RUN groupadd -g ${GID-} $USER && \
+            useradd -u ${UID-} -g ${GID-} -s /bin/bash -d $HOME -G dialout $USER
+    image: path_following_workspace
+    volumes:
+      - $HOME:$HOME
+    env_file:
+      - ../.env
+    environment:
+      - GAZEBO_RESOURCE_PATH
+      - GAZEBO_MODEL_PATH
+    network_mode: host
+    privileged: true
+
+  x11_base:
+    extends:
+      service: base
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.Xauthority:/root/.Xauthority
+      - $XDG_RUNTIME_DIR:$XDG_RUNTIME_DIR
+    environment:
+      - XDG_RUNTIME_DIR
+      - DISPLAY
+  
+  x11_gpu:
+    extends:
+      service: base
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.Xauthority:/root/.Xauthority
+      - $XDG_RUNTIME_DIR:$XDG_RUNTIME_DIR
+    environment:
+      - XDG_RUNTIME_DIR
+      - DISPLAY
+      - __NV_PRIME_RENDER_OFFLOAD=1
+      - __GLX_VENDOR_LIBRARY_NAME=nvidia
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

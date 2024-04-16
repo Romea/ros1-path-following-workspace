@@ -1,0 +1,18 @@
+x-yaml-anchors:  # create anchors "&something" that can be referenced using "*something"
+  x11-base: &x11-base
+    extends:
+      file: docker/common.yaml
+      service: x11_base
+
+
+services:
+  compile:
+    extends:
+      file: docker/common.yaml
+      service: base
+    command: 'catkin build'
+
+  bash:
+    <<: *x11-base
+    command: 'bash --rcfile /etc/bash.bashrc'
+

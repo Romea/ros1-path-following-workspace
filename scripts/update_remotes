@@ -1,0 +1,22 @@
+#!/bin/bash
+set -x
+
+remote='origin'
+match='https://gitlab.irstea.fr'
+replace='git@gitlab-ssh.irstea.fr:'
+
+root="$(dirname $BASH_SOURCE[0])"
+
+# change remote of all projects of the workspace and add an old remote
+find "$root/src" -type d -name '.git' | sed 's|/\.git$||' | while read path ; do
+  cd "$path"
+  old_url=$(git remote get-url "$remote")
+  new_url=$(echo "$old_url" | sed "s|$match|$replace|")
+  echo "update origin to '$new_url'"
+  echo git remote set-url "$remote" "$new_url"
+  cd -
+done
+
+# update the .rosinstall
+echo 'update .rosinstall'
+sed -i "s|$match|$replace|" "$root/.rosinstall"

@@ -1,0 +1,9 @@
+/src/
+/build/
+/gazebo/
+/devel/
+/logs/
+/.catkin_tools/
+.cache/
+.env
+recorded.traj

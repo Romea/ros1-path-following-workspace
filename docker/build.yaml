@@ -1,0 +1,18 @@
+services:
+  devel:
+    build:
+      context: .
+      target: dever
+      ssh: [default]
+      args:
+        - REPOS_FILE=${REPOS_FILE:-repositories}
+    image: gitlab-registry.irstea.fr/cyrille.pierre/path_following_workspace:devel
+
+  full:
+    build:
+      context: .
+      target: builder
+      ssh: [default]
+      args:
+        - REPOS_FILE=${REPOS_FILE:-repositories}
+    image: gitlab-registry.irstea.fr/cyrille.pierre/path_following_workspace:full
