@@ -10,9 +10,12 @@ services:
     extends:
       file: docker/common.yaml
       service: base
-    command: 'catkin build'
+    command: catkin build
 
   bash:
     <<: *x11-base
-    command: 'bash --rcfile /etc/bash.bashrc'
+    command: bash --rcfile /etc/bash.bashrc
 
+  simu:
+    <<: *x11-base
+    command: roslaunch path_following_demo path_following.launch demo:=simu

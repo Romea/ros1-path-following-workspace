@@ -1,30 +1,80 @@
 repositories:
-  src/core/romea_common_core:
+  # ------------------ tiara --------------------------
+  src/tiara/alpo_description:
     type: git
-    url: git@gitlab-ssh.irstea.fr:romea_core/romea_common.git
-    version: main
-  src/core/romea_odo_core:
-    type: git
-    url: git@gitlab-ssh.irstea.fr:romea_core/romea_odo.git
-    version: devel_unprotected
-  src/interfaces/core/romea_common_ros:
-    type: git
-    url: git@gitlab-ssh.irstea.fr:romea_ros1/interfaces/core/romea_common.git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/alpo_description.git
     version: devel
-  src/interfaces/sensors/romea_odo_ros:
+  src/tiara/alpo_tractor:
     type: git
-    url: git@gitlab-ssh.irstea.fr:romea_ros1/interfaces/sensors/romea_odo.git
-    version: devel
-  src/interfaces/vehicles/adap2e:
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/alpo_tractor.git
+    version: fix_gazebo
+  src/tiara/romea:
     type: git
-    url: git@gitlab-ssh.irstea.fr:romea_ros1/interfaces/vehicles/adap2e.git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/romea.git
     version: master
-  src/tools/romea_gazebo_ros:
+  src/tiara/romea_filtering:
     type: git
-    url: git@gitlab-ssh.irstea.fr:romea_ros1/tools/romea_gazebo.git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/romea_filtering.git
+    version: master
+  src/tiara/romea_gps:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/romea_gps.git
+    version: master
+  src/tiara/romea_imu:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/romea_imu.git
+    version: master
+  src/tiara/romea_lidar:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/romea_lidar.git
     version: devel
-  # src/tools/four_wheel_steering_tools:
-  #   type:git
-  #   url: git@gitlab-ssh.irstea.fr:romea/ros-vehicles/four_wheel_steering_tools.git
+  src/tiara/romea_localisation:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/romea_localisation.git
+    version: master
+  src/tiara/romea_localisation_msgs:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/romea_localisation_msgs.git
+    version: master
+  src/tiara/romea_odo:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/romea_odo.git
+    version: devel
+  src/tiara/romea_robot_to_world_localisation:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/romea_robot_to_world_localisation.git
+    version: master
+  src/tiara/minimal_ackermann_controller:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/minimal_ackermann_controller.git
+    version: master
+  src/tiara/cylinder_interface:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/cylinder_interface.git
+    version: master
+  src/tiara/romea_fsm:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/romea_fsm.git
+    version: master
+  src/tiara/serial:
+    type: git
+    url: https://github.com/wjwwood/serial.git
+    version: main
+  src/tiara/ethzasl_xsens_driver:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/ethzasl_xsens_driver.git
+    version: tiara
+  src/tiara/cmd_mux:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:tiara/ros1/cmd_mux.git
+    version: master
+
+  # ------------------ romea --------------------------
+
+  # ------------------ demo --------------------------
+  src/demos/path_following:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:cyrille.pierre/path_following_demo.git
+    version: main
 
 # vim: ft=yaml
