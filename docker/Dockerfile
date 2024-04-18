@@ -37,7 +37,8 @@ RUN --mount=type=cache,target=/var/lib/apt/lists \
     apt-get install -y --no-install-recommends \
         python3-pip \
         ccache \
-        && \
+        nlohmann-json3-dev \
+        libgsl-dev && \
     pip3 install --no-cache-dir \
         catkin-tools \
         && \
