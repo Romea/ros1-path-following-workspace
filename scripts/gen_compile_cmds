@@ -1,0 +1,4 @@
+#!/bin/bash
+build_dir="$(dirname -- "${BASH_SOURCE[0]}")/../build"
+json_file="compile_commands.json"
+jq -s 'map(.[])' "$build_dir"/*/"$json_file" > "$build_dir/$json_file"
