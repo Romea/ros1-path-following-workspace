@@ -96,11 +96,19 @@ repositories:
     version: main
 
   # ------------------ romea --------------------------
-  src/romea/romea_path_matching:
+  src/ros1/romea_common:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_ros1/interfaces/core/romea_common.git
+    version: devel
+  src/ros1/romea_path:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_ros1/interfaces/core/romea_path.git
+    version: devel
+  src/ros1/romea_path_matching:
     type: git
     url: git@gitlab-ssh.irstea.fr:romea_ros1/apps/control/romea_path_matching2.git
     # version: main
-  src/romea/romea_path_following:
+  src/ros1/romea_path_following:
     type: git
     url: git@gitlab-ssh.irstea.fr:romea_ros1/apps/control/romea_path_following2.git
     # version: main
