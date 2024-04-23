@@ -18,4 +18,15 @@ services:
 
   simu:
     <<: *x11-base
+    environment:
+      ROBOT_INITIAL_POSE: -x -10 -y -1 -Y -2.1
     command: roslaunch path_following_demo path_following.launch demo:=simu
+
+  debug_path_following:
+    <<: *x11-base
+    command: >-
+      roslaunch path_following_demo path_following_algo.launch --no-summary
+        config_dir:=$$WORKSPACE/src/demos/path_following/config
+        output:=screen
+        ns:=/path_following
+

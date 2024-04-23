@@ -5,6 +5,9 @@ services:
         FROM gitlab-registry.irstea.fr/cyrille.pierre/path_following_workspace:devel
         RUN groupadd -g ${GID-} $USER && \
             useradd -u ${UID-} -g ${GID-} -s /bin/bash -d $HOME -G dialout $USER
+        RUN apt-get update && \
+            apt-get install -y --no-install-recommends gdbserver && \
+            rm -rf /var/lib/apt/lists/*
     image: path_following_workspace
     volumes:
       - $HOME:$HOME

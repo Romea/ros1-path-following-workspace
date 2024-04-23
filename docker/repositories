@@ -93,7 +93,7 @@ repositories:
   src/core/romea_path_following:
     type: git
     url: git@gitlab-ssh.irstea.fr:romea_core/romea_path_following.git
-    version: main
+    version: devel
 
   # ------------------ romea --------------------------
   src/ros1/romea_common:
@@ -103,6 +103,18 @@ repositories:
   src/ros1/romea_path:
     type: git
     url: git@gitlab-ssh.irstea.fr:romea_ros1/interfaces/core/romea_path.git
+    version: devel
+  src/ros1/romea_mobile_base:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_ros1/interfaces/vehicles/romea_mobile_base.git
+    version: devel
+  src/ros1/romea_cmd_mux:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_ros1/tools/romea_cmd_mux.git
+    version: devel
+  src/ros1/romea_joy:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_ros1/interfaces/teleoperation/romea_joy.git
     version: devel
   src/ros1/romea_path_matching:
     type: git
