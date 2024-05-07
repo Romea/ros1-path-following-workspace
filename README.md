@@ -34,13 +34,6 @@ command:
 docker compose version
 ```
 
-Since the docker image is hosted in a private repository, you must first log docker in to the
-registry server.
-You can do it using this access token:
-```
-docker login gitlab-registry.irstea.fr -u romea -p zL4yPdPqtQsNQ9w3hyD4
-```
-
 After that, you can build the image and compile the workspace:
 ```
 docker compose run --rm --build compile
@@ -61,7 +54,6 @@ Execute the following commands from the root of this project:
 ```bash
 echo 'REPOS_FILE=repositories.tokens' >> .env
 ./scripts/create_ws
-docker login gitlab-registry.irstea.fr -u romea -p zL4yPdPqtQsNQ9w3hyD4
 docker compose run --rm --build compile
 ```
 

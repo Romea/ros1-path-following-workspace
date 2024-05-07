@@ -15,7 +15,7 @@ repositories:
   src/core/romea_path:
     type: git
     url: https://github.com/Romea/romea-core-path.git
-    version: multi
+    version: devel
   src/core/romea_path_matching:
     type: git
     url: https://github.com/Romea/romea_core_path_matching.git
@@ -37,11 +37,11 @@ repositories:
   src/ros1/romea_mobile_base:
     type: git
     url: https://github.com/Romea/romea-ros1-mobile-base.git
-    version: devel
+    version: main
   src/ros1/romea_cmd_mux:
     type: git
     url: https://github.com/Romea/romea-ros1-cmd-mux.git
-    version: devel
+    version: master
   src/ros1/romea_joy:
     type: git
     url: https://github.com/Romea/romea-ros1-joy.git
