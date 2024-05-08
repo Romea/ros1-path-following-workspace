@@ -12,6 +12,10 @@ repositories:
     type: git
     url: git@gitlab-ssh.irstea.fr:romea_core/romea_mobile_base.git
     version: main
+  src/core/romea_odo:
+    type: git
+    url: git@gitlab-ssh.irstea.fr:romea_core/romea_odo.git
+    version: devel_unprotected
   src/core/romea_path:
     type: git
     url: git@gitlab-ssh.irstea.fr:romea_core/romea_path.git
