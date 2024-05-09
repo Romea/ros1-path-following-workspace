@@ -49,10 +49,16 @@ repositories:
   src/ros1/romea_path_matching:
     type: git
     url: git@gitlab-ssh.irstea.fr:romea_ros1/apps/control/romea_path_matching2.git
-    # version: main
+    version: devel
   src/ros1/romea_path_following:
     type: git
     url: git@gitlab-ssh.irstea.fr:romea_ros1/apps/control/romea_path_following2.git
-    # version: main
+    version: devel
+
+  # ------------------ demos --------------------------
+  src/demos/path_following:
+    type: git
+    url: git@github.com:Romea/ros1-path-following-bringup.git
+    version: main
 
 # vim: ft=yaml

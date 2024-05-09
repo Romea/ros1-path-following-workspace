@@ -18,8 +18,8 @@ services:
 
   simu:
     <<: *x11-base
-    environment:
-      ROBOT_INITIAL_POSE: -x -10 -y -1 -Y -2.1
+    # environment:
+    #   ROBOT_INITIAL_POSE: -x -10 -y -1 -Y -2.1
     command: roslaunch path_following_demo path_following.launch demo:=simu
 
   debug_path_following:
